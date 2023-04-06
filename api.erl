@@ -13,5 +13,5 @@
 -include("kube.api").
 
 start()->
-    ok.
+    init:stop().
 

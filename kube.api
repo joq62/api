@@ -1,0 +1,12 @@
+-include("sender.hrl").
+
+%% kube:load_provider(ProviderSpec,HostSpec)
+-define(Kube_Load_Provider(ProviderSpec,HostSpec,Node,RpcTimeout),
+	rpc:call(Node,kube,load_provider,[ProviderSpec,HostSpec,?Sender],RpcTimeout)).
+
+%% kube:is_started_provider(ProviderSpec,HostSpec)
+-define(Kube_Is_Started_Provider(ProviderSpec,HostSpec,Node,RpcTimeout),
+	rpc:call(Node,kube,is_started_provider,[ProviderSpec,HostSpec,?Sender],RpcTimeout)).
+
+
+
